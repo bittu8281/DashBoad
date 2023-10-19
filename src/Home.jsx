@@ -1,34 +1,23 @@
-import React, { useState } from 'react'
-import 
-{ BsJustify,BsSearch,BsFillArchiveFill, BsFillGrid3X3GapFill, BsPeopleFill, BsFillBellFill}
- from 'react-icons/bs'
- import 
- { BarChart, Bar, Cell, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer, LineChart, Line } 
- from 'recharts';
+import React from 'react'
+import { BsFillArchiveFill, BsFillGrid3X3GapFill, BsPeopleFill, BsFillBellFill} from 'react-icons/bs'
+ import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
  import { HiArrowDown, HiArrowLongUp } from "react-icons/hi2";
  import { IoIosHand } from "react-icons/io";
  import { PieChart, Pie } from 'recharts';
 import Productsell from './Productsell';
-
-//  import { PieChart } from '@mui/x-charts/PieChart';
-
-// import SearchIcon from '@mui/icons-material/Search';
-
-function Home({OpenSidebar}) {
-    const [selects , setSelects] = useState();
-
+function Home() {
     const data = [
         {
           name: 'Jan Feb',
           uv: 4000,
           pv: 2400,
-        //   amt: 2400,
+          amt: 2400,
         },
         {
           name: 'Mar Apr',
           uv: 3000,
           pv: 1398,
-        //   amt: 2210,
+          amt: 2210,
         },
         {
           name: 'May Jun',
@@ -66,10 +55,7 @@ function Home({OpenSidebar}) {
   return (
     <main className='main-container'>
         <div className='main-title'>
-            <div>
-            <h3>Hello Shahrukh <IoIosHand /></h3>
-            </div>
-            {/* <button className='search'><BsSearch /></button> */}
+            <h3>Hello Shahrukh<IoIosHand /></h3>   
         </div>
 
         <div className='main-cards'>
@@ -80,7 +66,7 @@ function Home({OpenSidebar}) {
                 <div>
                 <h4>Earning</h4>
                 <h1>$198K</h1>
-                <h5><span className='cardspan1'>< HiArrowLongUp />37.8%</span> This month</h5>
+                <h5><span className='cardgreen'>< HiArrowLongUp />37.8%</span> This month</h5>
                 </div>
                
                 
@@ -92,7 +78,7 @@ function Home({OpenSidebar}) {
                 <div>
                 <h4>Order</h4>
                 <h1>$2.4K</h1>
-                <h5><span className='cardspan2'> <HiArrowDown />2%</span> This month</h5>
+                <h5><span className='cardred'> <HiArrowDown />2%</span> This month</h5>
                 </div>
             </div>
             <div className='card'>
@@ -102,7 +88,7 @@ function Home({OpenSidebar}) {
                 <div>
                 <h4>Balance</h4>
                 <h1>$2.4K</h1>
-                <h5><span className='cardspan3'> <HiArrowDown />2%</span>This month</h5>
+                <h5><span className='cardred'> <HiArrowDown />2%</span>This month</h5>
                 </div>
             </div>
             <div className='card'>
@@ -112,7 +98,7 @@ function Home({OpenSidebar}) {
                 <div>
                 <h4>Total Sales</h4>
                 <h1>$89k</h1>
-                <h5><span className='cardspan4'>< HiArrowLongUp />11%</span>This month</h5>
+                <h5><span className='cardgreen'>< HiArrowLongUp />11%</span>This month</h5>
                 </div>
             </div>
         </div>
@@ -155,9 +141,10 @@ function Home({OpenSidebar}) {
                 <Bar dataKey="uv" fill="#82ca9d" />
                 </BarChart>
             </ResponsiveContainer>
-            </div>
+        </div>
             <div style={{ width: '100%', height: 300 }}>
-                <div className='overviewpi'><h3 style={{color:'black'}}>Customer <br /><span style={{color:'grey'}}>Customers that buy products</span></h3>
+                <div className='overviewpi'>
+                    <h3>Customer <br /><span style={{color:'grey'}}>Customers that buy products</span></h3>
                 </div>
             <ResponsiveContainer width="100%" height="100%">
             <PieChart width={500} height={300}>

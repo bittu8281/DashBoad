@@ -159,17 +159,11 @@ body {
   padding: 8px 15px;
   border-radius: 5px;
 }
-.cardspan1{
+.cardgreen{
   color: green;
 }
-.cardspan2{
+.cardred{
   color: red;
-}
-.cardspan3{
-  color: red;
-}
-.cardspan4{
-  color: green;
 }
 
 .card:first-child {
@@ -191,13 +185,14 @@ body {
 .OverviewMon{
   display: flex;
   justify-content: space-between;
-  padding: 2px 2px;
+  padding: 5px 15px;
   background-color: white;
 }
 .overviewpi{
   display: flex;
   justify-content: space-between;
-  padding: 2px 2px;
+  padding: 2px 15px;
+  color: black;
   background-color: white;
 }
 .dropdown{
@@ -260,7 +255,7 @@ td {
 }
 
 
-/* end ProductTable */
+/* End ProductTable */
 
 
 /* Medium <= 992px */
@@ -299,6 +294,14 @@ td {
     grid-template-columns: 1fr;
     margin-top: 30px;
   }
+
+  .ProductTable {
+    margin: 120% -5%;
+  }
+
+  .overviewpi{
+    padding: 30px 5px;
+  }
 }
 
 /* Extra Small <= 576px */
@@ -306,14 +309,5 @@ td {
 @media screen and (max-width: 576px) {
   .hedaer-left {
     display: none;
-  }
-}
-
-@media screen and (max-width: 800px) {
-  .ProductTable {
-    margin: 120% -5%;
-  }
-  .overviewpi{
-    padding: 30px 5px;
   }
 }

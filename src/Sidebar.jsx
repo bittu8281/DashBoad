@@ -1,7 +1,5 @@
 import React from 'react'
-import 
-{BsBoxFill, BsGrid1X2Fill, BsFillArchiveFill, BsPiggyBankFill, BsPeopleFill,BsPatchPlusFill,}
- from 'react-icons/bs'
+import {BsBoxFill, BsGrid1X2Fill, BsFillArchiveFill, BsPiggyBankFill, BsPeopleFill,BsPatchPlusFill,} from 'react-icons/bs'
  import { MdHelpCenter } from "react-icons/md";
  import { IoIosArrowForward } from "react-icons/io";
 
@@ -17,32 +15,32 @@ function Sidebar({openSidebarToggle, OpenSidebar}) {
 
         <ul className='sidebar-list'>
             <li className='sidebar-list-item'>
-                <a href="">
+                <a href="#">
                     <BsGrid1X2Fill className='icon'/> Dashboard    <IoIosArrowForward />
                 </a>
             </li>
             <li className='sidebar-list-item'>
-                <a href="">
+                <a href="#">
                     <BsFillArchiveFill className='icon'/> Products    <IoIosArrowForward />
                 </a>
             </li>
             <li className='sidebar-list-item'>
-                <a href="">
+                <a href="#">
                     <BsPeopleFill className='icon'/> Customers <IoIosArrowForward />
                 </a>
             </li>
             <li className='sidebar-list-item'>
-                <a href="">
+                <a href="#">
                     <BsPiggyBankFill className='icon'/> Income <IoIosArrowForward />
                 </a>
             </li>
             <li className='sidebar-list-item'>
-                <a href="">
+                <a href="#">
                     <BsPatchPlusFill className='icon'/> Promote <IoIosArrowForward />
                 </a>
             </li>
             <li className='sidebar-list-item'>
-                <a href="">
+                <a href="#">
                     <MdHelpCenter className='icon'/> Help <IoIosArrowForward />
                 </a>
             </li>
