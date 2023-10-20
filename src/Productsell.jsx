@@ -8,7 +8,7 @@ function Productsell() {
             <table>
                 <tr style={{border:"solid red 2px"}}>
                     <td style={{width:"75%",color:"Black",}}><h2>Product Sell</h2></td>
-                    <td style={{width:"10%",color:"grey"}}><button className='search'><BsSearch /></button></td>
+                    <td style={{width:"10%",color:"grey"}}><button type='text'className='searchn'><BsSearch /></button></td>
                     <td style={{width:"10%",color:"grey"}}>
                     <select className='dropdown'>
                     <option>Last 30DAys</option>

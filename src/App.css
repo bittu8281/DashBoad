@@ -21,7 +21,7 @@ body {
 }
 
 .close_icon {
-  color: red;
+  color: rgb(232, 232, 232);
   margin-left: 30px;
   margin-top: 10px;
   cursor: pointer;
@@ -30,7 +30,7 @@ body {
 .grid-container {
   display: grid;
   grid-template-columns: 260px 1fr 1fr 1fr;
-  grid-template-rows: 0.2fr 3fr;
+  grid-template-rows: 0.2fr 10fr;
   grid-template-areas:
     'sidebar header header header'
     'sidebar main main main';
@@ -39,15 +39,14 @@ body {
 
 /* Header  */
 .header {
-  grid-area: header;
-  height: 60px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0 30px 0 30px;
-  box-shadow: 0 6px 7px -3px rgba(0, 0, 0, 0.35);
+  display: none;
 }
-
+.signout{
+  text-align: left;
+  font-size: 0.7em;
+  padding: 2px 9px;
+  color: white;
+}
 .menu-icon {
   display: none;
 }
@@ -61,6 +60,12 @@ body {
   overflow-y: auto;
   transition: all 0.5s;
   -webkit-transition: all 0.5s;
+}
+.sidebar-main{
+  border-radius: 20px;
+  background-color: #2d1f65;
+  height: 69px;
+  padding: 0px 21px;
 }
 
 .sidebar-title {
@@ -106,11 +111,6 @@ body {
 .sidebar-responsive {
   display: inline !important;
   position: absolute;
-  /*
-    we want the z-index of the sidebar higher so that
-    the charts are not showing over the sidebar 
-    on small screens
-  */
   z-index: 12 !important;
 }
 
@@ -119,20 +119,68 @@ body {
 
 /* Main  */  
 
-.search{
-  justify-content: left !important;
-  align-items: left !important;
-  background-color: whitesmoke;
-  padding: 3px 42px;
-  height: 23px;
-  margin: 20px 6px;
-}
+
 .main-container {
   grid-area: main;
   overflow-y: auto;
   padding: 1px 20px;
   color: rgba(255, 255, 255, 0.95);
 }
+.searchn{
+  justify-content: left !important;
+  align-items: left !important;
+  background-color: #dad7d7;
+  padding: 3px 42px;
+  height: 23px;
+  margin: 20px 6px;
+  border-radius: 20px;
+}
+.search{
+  display: inline-flex;
+  align-items: center;
+  background-image: #54e81e;
+  color: #180606;
+  padding: 10px;
+  border-radius: 4px;
+  border: 2px solid #f9f9fc;
+  background-color: white;
+  height: 10px;
+  margin: 13px 10px;
+}
+
+.search :is(input, button){
+  background: transparent;
+  color: inherit;
+  border: none;
+  outline:none;
+}
+
+.searchinput{
+  width: 0;
+  transition: width 0.5s;
+}
+
+.searchbutton{
+  display: grid;
+  place-items: center;
+  width: 25px;
+  height: 25px;
+  cursor: pointer;
+  transition: color 0.25s;
+}
+
+.searchbutton:hover{
+  color: #5add0e;
+}
+
+.search:focus-within input{
+  width: 200px;
+}
+::placeholder{
+  font: inherit;
+  color: grey;
+}
+
 .chartup{
   color: black;
   font-stretch: ultra-expanded;
@@ -187,6 +235,7 @@ body {
   justify-content: space-between;
   padding: 5px 15px;
   background-color: white;
+  border-radius: 10px;
 }
 .overviewpi{
   display: flex;
@@ -194,19 +243,39 @@ body {
   padding: 2px 15px;
   color: black;
   background-color: white;
+  border-radius: 10px;
 }
 .dropdown{
   color: rgb(48, 48, 48);
-  background-color: #e2e2e2;
-  /* justify-content: left; */
-  padding: 2px 2px;
+  background-color: #dad7d7;
+  padding: 5px 5px;
   height: 30px;
+  border-radius: 8px;
   margin: 20px 6px;
 }
-.card-inner {
+.card-inner{
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
+  border-radius: 200px;
+  margin: 50px 5px;
+  padding: 0px 20px;
+}
+.card-inner1 {
+  background-color: #8fd18f96;
+  color: green;
+}
+.card-inner2 {
+  background-color: #dba3f6e3;
+  color: #b30880;
+}
+.card-inner3 {  
+  background-color: #95eaff96;
+  color: #0b33ed;
+}
+.card-inner4 {  
+  background-color: #f975a1e3;
+  color: #bb1010;
 }
 
 .card-inner > .card_icon {
@@ -226,6 +295,7 @@ body {
 
 .recharts-surface{
   background-color: white;
+  border-radius: 10px;
 }
 
 /* End Main  */
@@ -236,6 +306,7 @@ body {
   padding: 10px 20px;
   margin: 50px 0px;
   background-color: white;
+  border-radius: 10px;
 }
 
 .ProductTable tr{
@@ -268,7 +339,28 @@ td {
       'header'
       'main';
   }
+ .header{
+  display: inline;
+ }
+ .header {
+  grid-area: header;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 30px 0 30px;
+  box-shadow: 0 6px 7px -3px rgba(0, 0, 0, 0.35);
+}
+.signout{
+  text-align: left;
+  font-size: 0.7em;
+  padding: 2px 9px;
+  color: white;
+}
 
+.search{
+  display: none;
+}
   #sidebar {
     display: none;
   }

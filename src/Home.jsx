@@ -1,9 +1,9 @@
 import React from 'react'
-import { BsFillArchiveFill, BsFillGrid3X3GapFill, BsPeopleFill, BsFillBellFill} from 'react-icons/bs'
- import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
- import { HiArrowDown, HiArrowLongUp } from "react-icons/hi2";
- import { IoIosHand } from "react-icons/io";
- import { PieChart, Pie } from 'recharts';
+import { BsFillArchiveFill,BsSearch, BsFillGrid3X3GapFill, BsPeopleFill, BsFillBellFill} from 'react-icons/bs'
+import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
+import { HiArrowDown, HiArrowLongUp } from "react-icons/hi2";
+import { IoIosHand } from "react-icons/io";
+import { PieChart, Pie } from 'recharts';
 import Productsell from './Productsell';
 function Home() {
     const data = [
@@ -55,12 +55,18 @@ function Home() {
   return (
     <main className='main-container'>
         <div className='main-title'>
-            <h3>Hello Shahrukh<IoIosHand /></h3>   
+            <h3>Hello Shahrukh<IoIosHand /></h3>  
+            <form className='search'>
+                <input type='text' placeholder='Search' className='searchinput' />
+                <button type='button' className='searchbutton'>
+                    <i className='ri-search-2-line'><BsSearch /></i>
+                </button>
+            </form> 
         </div>
 
         <div className='main-cards'>
             <div className='card'>
-                <div className='card-inner'>
+                <div className='card-inner card-inner1'>
                 <BsFillArchiveFill className='card_icon'/>
                 </div>
                 <div>
@@ -72,7 +78,7 @@ function Home() {
                 
             </div>
             <div className='card'>
-                <div className='card-inner'>
+                <div className='card-inner card-inner2'>
                    <BsFillGrid3X3GapFill className='card_icon'/>
                 </div>
                 <div>
@@ -82,7 +88,7 @@ function Home() {
                 </div>
             </div>
             <div className='card'>
-                <div className='card-inner'>
+                <div className='card-inner card-inner3'>
                     <BsPeopleFill className='card_icon'/>
                 </div>
                 <div>
@@ -92,7 +98,7 @@ function Home() {
                 </div>
             </div>
             <div className='card'>
-                <div className='card-inner'>
+                <div className='card-inner card-inner4'>
                     <BsFillBellFill className='card_icon'/>
                 </div>
                 <div>
@@ -106,7 +112,7 @@ function Home() {
         <div className='chartsmain'>
            
         <div className='charts'>
-        <div style={{ width: '100%', height: 300 }} className='bg_color'>
+        <div style={{ width: '100%', height: 300, backgroundColor: 'white', borderRadius:'30px' }} className='bg_color'>
         <div className='OverviewMon'>
                 <div className='chartup'>
                     <h3 >Overview <br /><span style={{color:'grey'}}>Monthly Earning</span></h3>
@@ -142,7 +148,7 @@ function Home() {
                 </BarChart>
             </ResponsiveContainer>
         </div>
-            <div style={{ width: '100%', height: 300 }}>
+            <div style={{ width: '100%', height: 300, backgroundColor: 'white', borderRadius:'30px' }}>
                 <div className='overviewpi'>
                     <h3>Customer <br /><span style={{color:'grey'}}>Customers that buy products</span></h3>
                 </div>
