@@ -12,7 +12,7 @@ function Routersfiles() {
   return (
     <BrowserRouter>
     <Routes>
-        <Route path ='/' element={<Mainpage />} />
+        <Route path ='/DashBoad' element={<Mainpage />} />
         <Route path ='/Product' element={<Product />} />
         <Route path ='/Customer' element={<Customer />} />
         <Route path ='/Income' element={<Income />} />

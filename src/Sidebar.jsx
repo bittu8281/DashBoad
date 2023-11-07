@@ -38,7 +38,7 @@ function Sidebar({openSidebarToggle, OpenSidebar}) {
        
         <ul className='sidebar-list'>
             <li className='sidebar-list-item'>
-                <Link to="/">
+                <Link to="/DashBoad">
                     <div className='sidebar-list-item-spacebetween'>
                       <h4><BsGrid1X2Fill className='icon'/> Dashboard </h4>
                       <h4><IoIosArrowForward /></h4>
