@@ -5,6 +5,9 @@ import { HiArrowDown, HiArrowLongUp } from "react-icons/hi2";
 import { IoIosHand } from "react-icons/io";
 import { PieChart, Pie } from 'recharts';
 import Productsell from './Productsell';
+import Carddata from './Jasondata';
+import { Typography } from '@mui/material';
+
 function Home() {
     const data = [
         {
@@ -55,7 +58,7 @@ function Home() {
   return (
     <main className='main-container'>
         <div className='main-title'>
-            <h3>Hello Shahrukh<IoIosHand /></h3>  
+            <h3>Hello Bittu<IoIosHand /></h3>  
             <form className='search'>
                 <input type='text' placeholder='Search' className='searchinput' />
                 <button type='button' className='searchbutton'>
@@ -69,10 +72,10 @@ function Home() {
                 <div className='card-inner card-inner1'>
                 <BsFillArchiveFill className='card_icon'/>
                 </div>
-                <div>
-                <h4>Earning</h4>
-                <h1>$198K</h1>
-                <h5><span className='cardgreen'>< HiArrowLongUp />37.8%</span> This month</h5>
+                <div className='card-content'>
+                <Typography sx={{fontSize:'1em'}}>{Carddata.Earning.title}</Typography>
+                <Typography sx={{fontSize:'1.5em', fontWeight: 'bold'}}>{Carddata.Earning.Amount}</Typography>
+                <Typography sx={{fontSize:'0.8em'}}><span className='cardgreen'>< HiArrowLongUp />{Carddata.Earning.hike}</span> {Carddata.Earning.month}</Typography>
                 </div>
                
                 
@@ -81,30 +84,30 @@ function Home() {
                 <div className='card-inner card-inner2'>
                    <BsFillGrid3X3GapFill className='card_icon'/>
                 </div>
-                <div>
-                <h4>Order</h4>
-                <h1>$2.4K</h1>
-                <h5><span className='cardred'> <HiArrowDown />2%</span> This month</h5>
+                <div className='card-content'>
+                <Typography sx={{fontSize:'1em'}}>{Carddata.Order.title}</Typography>
+                <Typography sx={{fontSize:'1.5em', fontWeight: 'bold'}}>{Carddata.Order.Amount}</Typography>
+                <Typography sx={{fontSize:'0.8em'}}><span className='cardred'> <HiArrowDown />{Carddata.Order.hike}</span> {Carddata.Order.month}</Typography>
                 </div>
             </div>
             <div className='card'>
                 <div className='card-inner card-inner3'>
                     <BsPeopleFill className='card_icon'/>
                 </div>
-                <div>
-                <h4>Balance</h4>
-                <h1>$2.4K</h1>
-                <h5><span className='cardred'> <HiArrowDown />2%</span>This month</h5>
+                <div className='card-content'>
+                <Typography sx={{fontSize:'1em'}}>{Carddata.Balance.title}</Typography>
+                <Typography sx={{fontSize:'1.5em', fontWeight: 'bold'}}>{Carddata.Balance.Amount}</Typography>
+                <Typography sx={{fontSize:'0.8em'}}><span className='cardred'> <HiArrowDown />{Carddata.Balance.hike}</span>{Carddata.Balance.month}</Typography>
                 </div>
             </div>
             <div className='card'>
                 <div className='card-inner card-inner4'>
                     <BsFillBellFill className='card_icon'/>
                 </div>
-                <div>
-                <h4>Total Sales</h4>
-                <h1>$89k</h1>
-                <h5><span className='cardgreen'>< HiArrowLongUp />11%</span>This month</h5>
+                <div className='card-content'>
+                <Typography sx={{fontSize:'1em'}}>{Carddata.Total.title}</Typography>
+                <Typography sx={{fontSize:'1.5em', fontWeight: 'bold'}}>{Carddata.Total.Amount}</Typography>
+                <Typography sx={{fontSize:'0.8em'}}><span className='cardgreen'>< HiArrowLongUp />{Carddata.Total.hike}</span>{Carddata.Total.month}</Typography>
                 </div>
             </div>
         </div>
@@ -112,7 +115,7 @@ function Home() {
         <div className='chartsmain'>
            
         <div className='charts'>
-        <div style={{ width: '100%', height: 300, backgroundColor: 'white', borderRadius:'30px' }} className='bg_color'>
+        <div style={{ width: '100%', height: 400, backgroundColor: 'white', borderRadius:'30px' }} className='bg_color'>
         <div className='OverviewMon'>
                 <div className='chartup'>
                     <h3 >Overview <br /><span style={{color:'grey'}}>Monthly Earning</span></h3>
@@ -124,7 +127,8 @@ function Home() {
                     <option>Annual</option>
                 </select>
             </div>
-            <ResponsiveContainer width="100%" height="100%">
+
+            <ResponsiveContainer width="100%" height="70%" >
             
             <BarChart
             width={500}
@@ -148,11 +152,11 @@ function Home() {
                 </BarChart>
             </ResponsiveContainer>
         </div>
-            <div style={{ width: '100%', height: 300, backgroundColor: 'white', borderRadius:'30px' }}>
+            <div style={{ width: '100%', height:  400, backgroundColor: 'white', borderRadius:'30px' }}>
                 <div className='overviewpi'>
                     <h3>Customer <br /><span style={{color:'grey'}}>Customers that buy products</span></h3>
                 </div>
-            <ResponsiveContainer width="100%" height="100%">
+            <ResponsiveContainer width="100%" height="70%">
             <PieChart width={500} height={300}>
           <Pie
             dataKey="value"
